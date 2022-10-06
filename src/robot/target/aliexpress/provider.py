@@ -1,5 +1,7 @@
-from urllib import response
 import requests
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 from storage import storage
 from utils import seed
@@ -19,7 +21,6 @@ def map():
     # print('flag')
     pages = seed.read(INFO['job_name'])
     
-    
     for page in pages["seed"]:
         try:
             map_seed(page)
@@ -38,26 +39,37 @@ def map():
     pass
 
 def map_seed(seed: str):
-    page = seed['url']['page']
-    index = seed['url']['index']
-    max_index = seed['url']['max_index']
-    pattern = seed['url']['pattern']
+    url = seed['page']['url']
+    index = seed['page']['index']
+    max_index = seed['page']['max_index']
+    pattern = seed['page']['pattern']
     
     next = True
     while (next):
-        resp = get_page(page)
-
+        resp = get_html(url)
+    
         current_index = f"{pattern}{index}"
         index += 1
         next_index = f"{pattern}{index}"
-        page = page.replace(current_index, next_index)
+        url = url.replace(current_index, next_index)
 
-        next = lost_seed(resp, index, max_index)
+        next = is_seed_over(resp, index, max_index)
 
-def get_page(url: str) -> bool:
+def get_html(url: str, parser: str) -> bool:
+    option = {
+        "beautiful_soup": beautiful_soup,
+        "selenium": selenium
+    }
+
+    return option[parser](url)
+
+def beautiful_soup(url: str):
     response = requests.get(url)
-    print(response.text)
-    return None
+    return BeautifulSoup(response.text, 'html.parser')
+
+def selenium(url: str):
+    driver = webdriver.Chrome()
+    return driver.get(url)
 
 def get_products(r):
     pass
@@ -65,7 +77,7 @@ def get_products(r):
 def get_provider():
     pass
 
-def lost_seed(resp: str, index: int, max_index: int = 1) -> bool:
+def is_seed_over(resp: str, index: int, max_index: int = 1) -> bool:
     return False
     if (index == max_index): return False
     return True
