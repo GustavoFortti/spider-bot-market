@@ -2,9 +2,8 @@ from storage import storage
 from robot.layout.page import map_page
 
 HEAD = {
-    "job_name": "aliexpress",
-    "storage_read": storage.read_pandas,
-    "storage_save": storage.write,
+    "job_name": "shein",
+    "storage": storage.read_pandas,
     "page_parser": "beautiful_soup"
 }
 
