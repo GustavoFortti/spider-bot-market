@@ -1,0 +1,17 @@
+{
+    "seed": [
+        {
+            "search": "",
+            "category": "",
+            "page": {
+                "url": "",
+                "index": 1,
+                "max_index": 20,
+                "pattern": "page="
+            },
+            "dt_ref_carga": "",
+            "dt_ref_update": "",
+            "full_load": false
+        }
+    ]
+}

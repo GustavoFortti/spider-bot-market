@@ -1,14 +1,8 @@
-from robot.target.aliexpress import provider
+import importlib
 
-def run():
-    # log information
-    target = "aliexpress"
-    type_job = "map_provider"
-
+def run(target: str, job_type: str):
+    job = importlib.import_module(f"robot.target.{target}.head")
+    
     print(f"target - {target}")
-    print(f"type - {type_job}")
-
-    # running
-
-    print("running...\n")
-    provider.map()
+    print(f"type - {job_type}")
+    job.run(job_type)

@@ -3,8 +3,8 @@
         {
             "search": "fone de ouvido via bluetooth",
             "category": "",
-            "url": {
-                "page": "https://pt.aliexpress.com/af/fone-de-ouvido-via-bluetooth.html?trafficChannel=af&SearchText=fone+de+ouvido+via+bluetooth&ltype=affiliate&SortType=default&page=1&CatId=0",
+            "page": {
+                "url": "https://pt.aliexpress.com/af/fone-de-ouvido-via-bluetooth.html?trafficChannel=af&SearchText=fone+de+ouvido+via+bluetooth&ltype=affiliate&SortType=default&page=1&CatId=0",
                 "index": 1,
                 "max_index": 20,
                 "pattern": "page="
@@ -12,22 +12,6 @@
             "dt_ref_carga": "20221002",
             "dt_ref_update": "",
             "full_load": false
-        },
-        {
-            "search": "",
-            "category": "Relógios masculinos",
-            "url": "https://pt.aliexpress.com/af/category/201052112.html?trafficChannel=af&catName=men-watches&CatId=201052112&ltype=affiliate&SortType=default&isrefine=y&page=1",
-            "dt_ref_carga": "20221002",
-            "dt_ref_select": "",
-            "index": 0
-        },
-        {
-            "search": "",
-            "category": "Eletrônicos",
-            "url": "https://pt.aliexpress.com/af/category/201000020.html?categoryBrowse=y&origin=n&CatId=201000020&catName=consumer-electronics",
-            "dt_ref_carga": "20221002",
-            "dt_ref_select": "",
-            "index": 0
         }
     ]
 }
