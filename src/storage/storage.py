@@ -11,3 +11,6 @@ def read(table: str):
 
 def read_pandas(table: str) -> pd.DataFrame:
     return pd.read_csv(f"./src/storage/data/{table}.csv")
+    
+def write_pandas(data: str) -> None:
+    pass
