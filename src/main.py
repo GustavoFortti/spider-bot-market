@@ -1,9 +1,9 @@
 import datetime
 
-from robot.target_manager import run
+from robot import target_manager
 
 def main():
-
+    
     # robo executado
     target = "aliexpress" 
     # provider - busca por fornecedores 
@@ -13,7 +13,7 @@ def main():
     # o robo esta atualizado?
     # tempo que leva para mapear
 
-    run(target, job_type)
+    target_manager.run(target, job_type)
 
 
 if __name__ == "__main__":

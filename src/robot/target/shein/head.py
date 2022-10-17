@@ -1,5 +1,5 @@
 from storage import storage
-from robot.layout.page import map_page
+from robot.layout.page_manager import map_page
 
 HEAD = {
     "job_name": "shein",

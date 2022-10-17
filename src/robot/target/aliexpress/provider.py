@@ -1,4 +1,6 @@
-import pandas as pd
 
-def get_provider(html_page: str) -> pd.DataFrame:
-    print("flag get_provider")
+
+def get_provider(driver: str) -> None:
+    # print(driver)
+    html = driver.find_all(class_ = "right-menu")
+    print(html)

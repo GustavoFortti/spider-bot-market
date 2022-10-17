@@ -1,5 +1,5 @@
-from storage import storage
-from robot.layout.page import map_page
+from services.storage import storage
+from robot.layout import page_manager
 
 HEAD = {
     "job_name": "aliexpress",
@@ -8,11 +8,4 @@ HEAD = {
     "page_parser": "beautiful_soup"
 }
 
-def run(job_type: str):
-
-    HEAD['table'] = F"{HEAD['job_name']}_{job_type}"
-    HEAD['target'] = getattr(__import__(f"{job_type}"), f"get_{job_type}")
-
-    data = map_page(HEAD)
-
-    HEAD['storage_save'](data)
+run = lambda job_type: page_manager.run(HEAD, job_type)
