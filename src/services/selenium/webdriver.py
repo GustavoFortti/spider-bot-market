@@ -1,17 +1,27 @@
-import os
-
-from selenium.webdriver.chrome.service import Service
+import time
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 
-def start():
+def start(url: str) -> object:
     """
         start selenium
     """
     try:
-        driver = webdriver.Chrome("./src/services/selenium/chromedriver")
-    except (RuntimeError, TypeError, NameError):
-        print(NameError)
-    
+        options = webdriver.ChromeOptions()
+        options.add_argument("headless")
+        driver = webdriver.Chrome("./src/services/selenium/module/chromedriver", chrome_options=options)
+        print(f"log - get {url}")
+        driver.get(url)
+        status = 200
 
-    return driver
+        html = driver.page_source
+
+        print("log - time 2")
+        time.sleep(2)
+
+        driver.close()
+        print("log - driver closed")
+    except (RuntimeError, TypeError, NameError):
+        status = None
+        print(f"log - NameError")
+    
+    return status, html

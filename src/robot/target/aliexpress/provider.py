@@ -1,6 +1,6 @@
 
 
-def get_provider(driver: str) -> None:
-    # print(driver)
-    html = driver.find_all(class_ = "right-menu")
-    print(html)
+def get_provider(element: object) -> None:
+
+    item = element.find_all("a", {"class": "_3t7zg _2f4Ho"})
+    pass
