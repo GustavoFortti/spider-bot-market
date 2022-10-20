@@ -1,16 +1,11 @@
-from storage import storage
-from robot.layout.page import map_page
+from services.storage import storage
+from robot.layout import spider
 
 HEAD = {
     "job_name": "aliexpress",
     "storage_read": storage.read_pandas,
-    "storage_save": storage.write,
-    "page_parser": "beautiful_soup"
+    "storage_save": storage.write_pandas,
+    "page_parser": "selenium"
 }
 
-def run(job_type: str):
-
-    HEAD['table'] = F"{HEAD['job_name']}_{job_type}"
-    HEAD['target'] = getattr(__import__(f"{job_type}"), f"get_{job_type}")
-
-    map_page(HEAD)
+run = lambda job_type: spider.start(HEAD, job_type)

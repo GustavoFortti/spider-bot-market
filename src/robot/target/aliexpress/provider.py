@@ -1,4 +1,6 @@
-import pandas as pd
 
-def get_provider(html_page: str) -> pd.DataFrame:
-    print("flag get_provider")
+
+def get_provider(element: object) -> None:
+
+    item = element.find_all("a", {"class": "_3t7zg _2f4Ho"})
+    pass

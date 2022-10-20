@@ -11,6 +11,7 @@
             },
             "dt_ref_carga": "20221002",
             "dt_ref_update": "",
+            "load_page": true,
             "full_load": false
         }
     ]
