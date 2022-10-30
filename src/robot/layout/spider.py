@@ -64,10 +64,7 @@ def page_reader(url: str, parser: str) -> list:
     }
 
     try:
-        status, resp = seed.load_page()
-        if (status != 200): 
-            status, resp = option[parser](url)
-            seed.save_page()
+        status, resp = option[parser](url)
     except (RuntimeError, TypeError, NameError):
         print(f"log - {TypeError}")
 

@@ -5,6 +5,12 @@ def start(url: str) -> object:
     """
         start selenium
     """
+
+    if (True):
+        # read index.heml
+        # return
+        pass
+
     try:
         options = webdriver.ChromeOptions()
         options.add_argument("headless")
