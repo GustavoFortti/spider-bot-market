@@ -5,7 +5,9 @@ def start(url: str) -> object:
     """
         start selenium
     """
+
     try:
+        time.sleep(1)
         options = webdriver.ChromeOptions()
         options.add_argument("headless")
         driver = webdriver.Chrome("./src/services/selenium/module/chromedriver", chrome_options=options)
@@ -16,7 +18,7 @@ def start(url: str) -> object:
         html = driver.page_source
 
         print("log - time 2")
-        time.sleep(2)
+        time.sleep(1)
 
         driver.close()
         print("log - driver closed")
